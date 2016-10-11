@@ -171,8 +171,10 @@ void CVAAPIContext::QueryCaps()
   int max_attributes = vaMaxNumDisplayAttributes(m_display);
   m_attributes = new VADisplayAttribute[max_attributes];
 
+#if 0  
   if (!CheckSuccess(vaQueryDisplayAttributes(m_display, m_attributes, &m_attributeCount)))
     return;
+#endif
 
   for(int i = 0; i < m_attributeCount; i++)
   {
